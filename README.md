@@ -4,13 +4,15 @@ You can see a fully functional version here: https://escriva-secret-santa.heroku
 
 ## Instalation
 
-To test it locally, first you need to have Python 3.6 and pip installed in your computer. We recomend to use VirtualEnv too. It's very useful to avoid install all libraries in the main environment.
+In order to test it locally, first you need to have Python 3.6 and pip installed in your computer. We recomend to use VirtualEnv too. It's very useful to avoid install all libraries in the main environment.
 
 Then, install all dependencies with
 
 ```
 pip3 install -r requirements
 ```
+
+## Usage
 
 Once installed, you can run the project with
 
