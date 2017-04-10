@@ -14,5 +14,15 @@ class Participant(models.Model):
     list = models.ForeignKey(List, related_name="participants", null=True)  # Every participant belong to a list
     giftee = models.ForeignKey("Participant", null=True, default=None)
 
+    @property
+    def giftee_name(self):
+        """
+        Instead of showing the id of the giftee, we will show their name
+        """
+        return self.giftee.name if self.giftee is not None else None
+
     def __str__(self):
-        return '%s, %s' % (self.id, self.name)
+        """
+        String representation of the object
+        """
+        return '%s' % self.name
