@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h2>{% trans "giftee for"|capfirst %} {{ participant.name }}</h2>
+    <h3>{% trans "name"|capfirst %}: {{ giftee.name }}</h3>
+    <p>{% trans "age"|capfirst %}: {{ giftee.age }}</p>
+    <p><a href="{% url "default_list" %}">{% trans "back"|capfirst %}</a></p>
+{% endblock %}
