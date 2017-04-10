@@ -3,7 +3,11 @@
 
 {% block content %}
     <h2>{% trans "giftee for"|capfirst %} {{ participant.name }}</h2>
-    <h3>{% trans "name"|capfirst %}: {{ giftee.name }}</h3>
-    <p>{% trans "age"|capfirst %}: {{ giftee.age }}</p>
+    {% if giftee %}
+        <h3>{% trans "name"|capfirst %}: {{ giftee.name }}</h3>
+        <p>{% trans "age"|capfirst %}: {{ giftee.age }}</p>
+        {% else %}
+        <p>{% trans "cannot find giftee for this participant"|capfirst %}</p>
+    {% endif %}
     <p><a href="{% url "default_list" %}">{% trans "back"|capfirst %}</a></p>
 {% endblock %}

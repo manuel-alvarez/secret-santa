@@ -63,6 +63,7 @@ class GifteeView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         participant_id = kwargs.get("participant_id", None)
+        errors = []
 
         # First, we get the participant data. Of course, using our API
         response = requests.get(
@@ -90,5 +91,8 @@ class GifteeView(TemplateView):
 
             kwargs["participant"] = participant
             kwargs["giftee"] = giftee
+
+        else:
+            errors.append("Cannot find giftee for this participant")
 
         return super(GifteeView, self).get(request, *args, **kwargs)
